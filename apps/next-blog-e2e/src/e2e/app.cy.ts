@@ -1,13 +1,11 @@
-import { getGreeting } from '../support/app.po';
-
 describe('next-blog', () => {
-  beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
     // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome next-blog');
+    cy.visit('http://localhost:4200/');
+    cy.get('input').click();
+    cy.get('input').type('sunt aut facere');
+
   });
 });
